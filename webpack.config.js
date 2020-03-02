@@ -9,8 +9,8 @@ module.exports = {
   },
   plugins: [
     new DllReferencePlugin({
-      context: path.resolve(__dirname, 'dist'),
-      manifest: require('./dist/manifest.json'),
+      context: '.',
+      manifest: path.resolve(__dirname, 'dist/manifest.json'),
       //sourceType: 'commonjs2'
     })
   ]

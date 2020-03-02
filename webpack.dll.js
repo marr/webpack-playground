@@ -1,16 +1,16 @@
 const path = require('path');
-const { DllPlugin } = require('webpack');
+const { DllReferencePlugin, DllPlugin } = require('webpack');
 
 module.exports = {
   entry: ['lodash'],
   output: {
     filename: '[name].dll.js',
     path: path.resolve(__dirname, 'dist'),
-    //library: '[name]_[fullhash]'
+    library: '[name]'
   },
   plugins: [
     new DllPlugin({
-      name: '[name]_[hash]',
+      name: '[name]',
       path: path.join(__dirname, 'dist/manifest.json'),
     })
   ]
